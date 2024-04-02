@@ -131,9 +131,9 @@ export default defineNuxtConfig({
   },
 
   nitro: {
-    prerender: {
-      routes: ['/sitemap.xml']
-    }
+    // prerender: {
+    //   routes: ['/sitemap.xml']
+    // }
   },
 
   css: [
@@ -162,8 +162,8 @@ export default defineNuxtConfig({
     devOptions: { enabled: true },
     registerType: 'autoUpdate',
     manifest: {
-      name: 'D',
-      short_name: 'D',
+      name: 'Berserkir Hacknarok 2024',
+      short_name: 'Berserkir 2024',
       theme_color: '#ffffff',
       icons: icons.map((icon) => ({
         ...icon,
