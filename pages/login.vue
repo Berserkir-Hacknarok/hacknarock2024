@@ -1,5 +1,7 @@
 <template>
-  <NuxtLayout>
-    <span>Login page</span>
-  </NuxtLayout>
+  <div>
+    <NuxtLayout>
+      <span>Login page</span>
+    </NuxtLayout>
+  </div>
 </template>

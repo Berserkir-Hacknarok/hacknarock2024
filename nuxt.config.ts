@@ -1,4 +1,4 @@
-import { resolve } from 'path'
+// import { resolve } from 'path'
 
 import { APP_TITLE } from './settings/constants'
 
@@ -155,11 +155,6 @@ export default defineNuxtConfig({
     fallback: 'dark'
   },
 
-  content: {
-    documentDriven: true,
-    ignores: ['README.md', 'LICENSE.md', 'CHANGELOG.md', 'CONTRIBUTING.md', 'CODE_OF_CONDUCT.md', 'SECURITY.md']
-  },
-
   pwa: {
     devOptions: { enabled: true },
     registerType: 'autoUpdate',
@@ -175,7 +170,6 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    '@nuxt/content',
     '@nuxtjs/color-mode',
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
