@@ -93,5 +93,10 @@
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
     "vue-jest": "^5.0.0-alpha.10"
+  },
+  "resolutions": {
+    "string-width": "4.2.3",
+    "wrap-ansi": "7.0.0",
+    "vue": "3.3.13"
   }
 }

@@ -96,6 +96,8 @@ const icons = [
 ]
 
 export default defineNuxtConfig({
+  // ssr: false,
+
   app: {
     pageTransition: {
       name: 'page',
@@ -199,6 +201,6 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    secretKey: process.env.SECRET_KEY
+    // secretKey: process.env.SECRET_KEY
   }
 })
