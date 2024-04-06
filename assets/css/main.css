@@ -22,7 +22,10 @@ body {
     "article article notes"
     "leftpanel vscode game";
 }
-
+.codeEditor{
+  @apply h-full;
+  grid-area: vscode;
+}
 /* klasy karola start*/
 .codeEditor div{
   height:550px;
