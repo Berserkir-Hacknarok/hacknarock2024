@@ -23,20 +23,53 @@ body {
     "leftpanel vscode game";
 }
 
-.vscode {
-  @apply h-full;
-  grid-area: vscode;
-}
+/* klasy karola start*/
 .codeEditor div{
+  height:550px;
   min-height: 100%;
   max-height:100%;
   overflow:auto;
 }
-.codeEditor p{
+.codeEditor *{
   width:100%;
   color:rgb(124, 231, 231);
 }
+.codeEditorButtons * {
+  margin: 3px;
+  margin-left:2px;
+  margin-right:2px;
+  padding:5px;
+  padding-top:2px;
+  padding-bottom:2px;
+  display:block;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 15px;
+  display: block;
+  border: 0px;
+  font-size:12px;
+  box-shadow: 0px 0px 14px -7px #1a025c;
+  background-image: linear-gradient(45deg, #1d086d 0%, #0e32d1  51%, #6437ad  100%);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
 
+.codeEditorButtons *:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.codeEditorButtons *:active {
+  transform: scale(0.95);
+}
+/* klasy karola end*/
 
 
 .notes {
