@@ -14,6 +14,8 @@ const { data: headlines } = useAsyncData(
   async () => (await $fetch(`/api/article/headlines?country=${currentCountry.value}`)).results
 )
 
+const title = ref('')
+
 watch($i18n.locale, () => {
   refreshNuxtData('headlines')
 })
@@ -21,7 +23,14 @@ watch($i18n.locale, () => {
 
 <template>
   <div class="article">
-    <ArticleList :headlines="headlines" />
-    <ArticleSummary />
+    <ArticleList v-if="headlines?.length" :headlines="headlines" @select="title = $event" />
+    <div v-else class="article__list">
+      <h2>{{ $t('no-headlines') }}</h2>
+    </div>
+
+    <ArticleSummary v-if="title.length" :title="title" />
+    <div v-else class="article__summary">
+      <h2>{{ $t('pick-article') }}</h2>
+    </div>
   </div>
 </template>

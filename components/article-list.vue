@@ -7,8 +7,10 @@ const $props = defineProps<{
   headlines: IArticleHeadline[]
 }>()
 
+const $emits = defineEmits(['select'])
+
 const roots = computed(() => {
-  return $props.headlines.map((headline) => headline.author).filter((author) => author)
+  return [...new Set($props.headlines.map((headline) => headline.author).filter((author) => author))]
 })
 
 const nodes = computed(() => {
@@ -16,12 +18,16 @@ const nodes = computed(() => {
     roots.value.map((root) => [root, $props.headlines.filter((headline) => headline.author === root)])
   )
 })
+
+function selectArticle(article: string) {
+  $emits('select', article)
+}
 </script>
 
 <template>
   <div class="article__list">
     <client-only>
-      <fwb-accordion flush class="overflow-y-auto max-h-[calc(50vh_-_3rem)]">
+      <fwb-accordion flush class="overflow-y-auto max-h-[calc(50vh_-_104px)]">
         <fwb-accordion-panel v-for="root in roots" :key="root">
           <fwb-accordion-header>{{ root }}</fwb-accordion-header>
           <fwb-accordion-content>
@@ -30,6 +36,7 @@ const nodes = computed(() => {
                 v-for="node in nodes[root]"
                 :key="node.title"
                 class="p-2 cursor-pointer w-full hover:bg-gray-200 hover:dark:bg-gray-700"
+                @click="selectArticle(node.title)"
               >
                 {{ node.title }}
               </li>

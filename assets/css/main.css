@@ -16,27 +16,31 @@ body {
 /* Grid */
 
 .container {
-  @apply grid grid-cols-[300px_1fr_300px] grid-rows-[auto_calc(50vh-1rem)_auto] gap-[0.25rem_0.25rem];
+  @apply grid grid-cols-[300px_1fr_300px] grid-rows-[56px_calc(50vh-72px)_auto] gap-[0.25rem_0.25rem];
   grid-template-areas:
     "header header header"
     "article article notes"
     "leftpanel vscode game";
 }
-.codeEditor{
+
+.codeEditor {
   @apply h-full;
   grid-area: vscode;
 }
 /* klasy karola start*/
-.codeEditor div{
+
+.codeEditor div {
   height:550px;
   min-height: 100%;
-  max-height:100%;
-  overflow:auto;
+  max-height: 100%;
+  overflow: auto;
 }
-.codeEditor *{
+
+.codeEditor p {
   width:100%;
   color:rgb(124, 231, 231);
 }
+
 .codeEditorButtons * {
   margin: 3px;
   margin-left:2px;
@@ -81,7 +85,6 @@ body {
 }
 
 .game {
-  @apply h-full;
   grid-area: game;
 }
 

@@ -25,12 +25,37 @@ interface IArticleResponse {
 export default defineEventHandler(async (event) => {
   const id = getRouterParam(event, 'id')
 
-  const res = await $fetch<IArticleResponse>(
-    `https://newsapi.org/v2/everything?q=${id}&searchIn=title&apiKey=${API_KEY}`
-  )
+  const title = decodeURIComponent(id)
+  const parsedTitle = title.slice(0, title.lastIndexOf(' - ') === -1 ? title.length : title.lastIndexOf(' - '))
 
-  return {
-    statusCode: 200,
-    results: res.articles
+  try {
+    const res: IArticleResponse = await $fetch(
+      `https://newsapi.org/v2/everything?q=${parsedTitle}&searchIn=title&apiKey=${API_KEY}`
+    )
+
+    if (!res.articles.length) {
+      return {
+        statusCode: 404,
+        results: []
+      }
+    }
+
+    const article = res.articles.filter((a) => a.url !== 'https://removed.com')[0]
+
+    const baseUrl = article.url.split('/')[2]
+
+    console.info('baseUrl', baseUrl)
+    console.info(
+      'article',
+      baseUrl === 'slashdot.org' ? article.description : article.description + '\n\n' + article.content
+    )
+
+    return {
+      statusCode: 200,
+      results: [baseUrl === 'slashdot.org' ? article.description : article.description + '\n\n' + article.content]
+    }
+  } catch (error) {
+    console.error('Error:', error)
+    return createError(error as Error)
   }
 })

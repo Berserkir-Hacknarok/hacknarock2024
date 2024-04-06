@@ -158,7 +158,7 @@ export default defineNuxtConfig({
     devOptions: { enabled: true },
     registerType: 'autoUpdate',
     manifest: {
-      name: 'Berserkir Hacknarok 2024',
+      name: 'Berserkir Hacknarök 2024',
       short_name: 'Berserkir 2024',
       theme_color: '#ffffff',
       icons: icons.map((icon) => ({
