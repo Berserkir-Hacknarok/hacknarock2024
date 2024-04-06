@@ -22,12 +22,24 @@ onMounted(() => {
     })
   }
 })
+
+useHead({
+  script: [
+    {
+      src: 'https://www.tiktok.com/embed.js',
+      defer: true
+    }
+  ]
+})
+
 </script>
 
 <template>
   <div>
     <VitePwaManifest />
-
+    <Head>
+      <!-- script async src="https://www.tiktok.com/embed.js"></script> -->
+    </Head>
     <NuxtPage />
   </div>
 </template>
