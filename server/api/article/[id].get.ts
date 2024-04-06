@@ -25,7 +25,9 @@ interface IArticleResponse {
 export default defineEventHandler(async (event) => {
   const id = getRouterParam(event, 'id')
 
-  const res = await $fetch<IArticleResponse>(`https://newsapi.org/v2/everything?q=${id}&searchIn=title&apiKey=${API_KEY}`)
+  const res = await $fetch<IArticleResponse>(
+    `https://newsapi.org/v2/everything?q=${id}&searchIn=title&apiKey=${API_KEY}`
+  )
 
   return {
     statusCode: 200,
