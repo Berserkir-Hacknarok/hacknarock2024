@@ -1,5 +1,5 @@
 <template>
-  <editor-content :editor="editor" />
+  <editor-content class="codeEditor" :editor="editor" />
 </template>
 
 <script setup>
