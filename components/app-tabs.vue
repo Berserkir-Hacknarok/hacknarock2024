@@ -6,7 +6,7 @@ const activeTab = ref('first')
 
 <template>
   <div class="app-tabs flex flex-col w-full h-full justify-start items-center">
-    <FwbCard class="h-full overflow-auto [&>*]:h-full" variant="image">
+    <FwbCard class="h-full w-full !max-w-full overflow-auto [&>*]:h-full" variant="image">
       <FwbTabs v-model="activeTab" class="p-4 h-[calc(100%_-_4rem)] [&>*]:h-full">
         <FwbTab name="article-tabs" :title="$t('articles')">
           <ArticleTab />
