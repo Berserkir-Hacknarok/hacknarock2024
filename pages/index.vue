@@ -3,7 +3,7 @@
     <NuxtLayout>
       <AppHeader />
 
-      <Vscode />
+      <CodeEditor />
 
       <Notes />
 
