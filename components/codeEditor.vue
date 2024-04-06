@@ -9,7 +9,7 @@ const editor = useEditor({
 </script>
 
 <template>
-  <div class="vscode max-w-[calc(100vw_-_600px)] h-[calc(50vh-56px)] overflowy-y-scroll">
+  <div class="vscode max-w-[calc(100vw_-_600px)] overflowy-y-scroll p-4">
     <div v-if="editor" class="codeEditorButtons inline-flex flex-wrap">
       <button
         :disabled="!editor.can().chain().focus().toggleBold().run()"
