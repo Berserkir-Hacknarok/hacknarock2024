@@ -9,43 +9,75 @@ body {
   @apply bg-white dark:bg-zinc-900;
 }
 
-/* Page transition effects */
-
-/*
-.page-enter-active,
-.page-leave-active {
-  transition: all 0.3s;
+.container {
+  @apply w-screen h-screen !max-w-[100vw] flex items-center justify-start p-4;
 }
+
+/* Grid */
+
+.container {
+  @apply grid grid-cols-[300px_1fr_300px] grid-rows-[0.5fr_1fr_1fr] gap-[0.25rem_0.25rem];
+  grid-template-areas:
+    "header header header"
+    "article article notes"
+    "leftpanel vscode game";
+}
+
+.vscode {
+  grid-area: vscode;
+}
+
+.notes {
+  grid-area: notes;
+}
+
+.game {
+  grid-area: game;
+}
+
+.leftpanel {
+  @apply grid grid-cols-[1fr] grid-rows-[auto_1fr] gap-[0px_0px];
+  grid-template-areas:
+    "settings"
+    "shorts";
+  grid-area: leftpanel;
+}
+
+.settings {
+  grid-area: settings;
+}
+
+.shorts {
+  grid-area: shorts;
+}
+
+.article {
+  @apply grid grid-cols-[300px_1fr] grid-rows-[1fr] gap-[0px_0px];
+  grid-template-areas: "article__list article__summary";
+  grid-area: article;
+}
+
+.article__list {
+  grid-area: article__list;
+}
+
+.article__summary {
+  grid-area: article__summary;
+}
+
+.header {
+  grid-area: header;
+}
+
+/* Page transition effects */
 
 .page-enter-from,
 .page-leave-to {
   opacity: 0;
   filter: blur(1rem);
 }
-*/
 
-.diana-page.page-enter-active .diana-page-content,
-.diana-page.page-leave-active .diana-page-content,
-.content-page.page-enter-active main,
-.content-page.page-leave-active main {
-  transition: all 0.2s;
-}
-
-.diana-page.page-enter-from .diana-page-content,
-.diana-page.page-leave-to .diana-page-content,
-.content-page.page-enter-from main,
-.content-page.page-leave-to main {
-  opacity: 0;
-  filter: grayscale(1);
-}
-
-.index-page.page-enter-from,
-.index-page.page-leave-to {
-  opacity: 0;
-  filter: blur(1rem);
-}
-
-.index-page.page-enter-active,
-.index-page.page-leave-active {
+.page-enter-active,
+.page-leave-active {
   transition: all 0.4s;
 }
