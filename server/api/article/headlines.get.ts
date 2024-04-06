@@ -23,10 +23,10 @@ interface IArticleResponse {
 }
 
 export default defineEventHandler(async (event) => {
-  const id = getRouterParam(event, 'id')
+  const { country } = getQuery(event)
 
   const res = await $fetch<IArticleResponse>(
-    `https://newsapi.org/v2/top-headlines?q=${id}&searchIn=title&apiKey=${API_KEY}`
+    `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${API_KEY}`
   )
 
   return {
