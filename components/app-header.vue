@@ -4,7 +4,7 @@ const { data: translations } = useAsyncData('translations', async () => (await $
 
 <template>
   <div class="header">
-    <h1 class="text-4xl font-bold">Hacknarock</h1>
+    <h1 class="text-4xl font-bold">Hacknarok</h1>
 
     {{ translations }}
   </div>

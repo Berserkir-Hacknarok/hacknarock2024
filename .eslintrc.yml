@@ -24,6 +24,7 @@ parserOptions:
   ecmaVersion: latest
   sourceType: module
 rules:
+  'vue/singleline-html-element-content-newline': off
   '@typescript-eslint/no-shadow':
     - error
     - allow:
