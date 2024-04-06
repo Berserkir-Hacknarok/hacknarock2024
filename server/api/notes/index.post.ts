@@ -1,0 +1,1 @@
+// tworzenie noteów

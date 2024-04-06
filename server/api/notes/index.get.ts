@@ -1,0 +1,1 @@
+// pobieranie noteów
