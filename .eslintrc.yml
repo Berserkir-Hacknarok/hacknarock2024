@@ -25,6 +25,7 @@ parserOptions:
   sourceType: module
 rules:
   'vue/singleline-html-element-content-newline': off
+  'vue/max-attributes-per-line': off
   '@typescript-eslint/no-shadow':
     - error
     - allow:

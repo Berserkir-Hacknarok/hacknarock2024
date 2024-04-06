@@ -23,7 +23,7 @@ body {
     "leftpanel vscode game";
 }
 
-.codeEditor {
+.vscode {
   @apply h-full;
   grid-area: vscode;
 }

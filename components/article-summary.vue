@@ -32,7 +32,7 @@ watch($props, async () => {
 </script>
 
 <template>
-  <div class="article__summary">
+  <div class="article__summary overflow-y-auto">
     <h2>{{ $props.title }}</h2>
 
     <div v-if="pending" class="w-full h-full flex flex-col items-center justify-center">

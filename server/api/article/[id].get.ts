@@ -60,18 +60,18 @@ export default defineEventHandler(async (event) => {
     console.info(
       `Summarize the given article, while translating it to {${language}}. Article:{` +
         `${baseUrl === 'slashdot.org' ? article.description : article.description + '\n\n' + article.content}` +
-        "}. During the response you MUST roleplay as a bloodthirsty viking whispering situations to his chieftain. Use viking slang. Prioritize roleplaying over credibility. The text should be 'over the top'"
+        "}. During the response you MUST roleplay as a bloodthirsty viking whispering situations to his chieftain. Use viking slang. Prioritize roleplaying over credibility. The text should be 'over the top'. Use all available tokens."
     )
 
     const completion = await openai.chat.completions.create({
-      max_tokens: 250,
+      max_tokens: 300,
       messages: [
         {
           role: 'system',
           content:
             `Summarize the given article, while translating it to {${language}}. Article:{` +
             `${baseUrl === 'slashdot.org' ? article.description : article.description + '\n\n' + article.content}` +
-            "}. During the response you MUST roleplay as a bloodthirsty viking whispering situations to his chieftain. Use viking slang. Prioritize roleplaying over credibility. The text should be 'over the top'"
+            "}. During the response you MUST roleplay as a bloodthirsty viking whispering situations to his chieftain. Use viking slang. Prioritize roleplaying over credibility. The text should be 'over the top'. Use all available tokens."
         }
       ],
       model: 'gpt-3.5-turbo'
