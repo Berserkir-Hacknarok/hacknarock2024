@@ -1,7 +1,0 @@
-.prose a {
-  @apply inline;
-}
-
-.prose p {
-  @apply text-justify;
-}
