@@ -41,6 +41,7 @@
     "flowbite-vue": "^0.1.2",
     "h3": "^1.9.0",
     "js-quantities": "^1.8.0",
+    "kysely": "^0.27.3",
     "nuxt": "^3.11.2",
     "pinia": "^2.1.6",
     "sitemap": "^7.1.1",

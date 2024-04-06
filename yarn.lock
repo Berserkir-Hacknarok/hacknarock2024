@@ -15130,6 +15130,11 @@ kolorist@^1.8.0:
 >>>>>>> Stashed changes
   integrity sha512-Y+60/zizpJ3HRH8DCss+q95yr6145JXZo46OTpFvDZWLfRCE4qChOyk1b26nMaNpfHHgxagk9dXT5OP0Tfe+dQ==
 
+kysely@^0.27.3:
+  version "0.27.3"
+  resolved "https://registry.yarnpkg.com/kysely/-/kysely-0.27.3.tgz#6cc6c757040500b43c4ac596cdbb12be400ee276"
+  integrity sha512-lG03Ru+XyOJFsjH3OMY6R/9U38IjDPfnOfDgO3ynhbDr+Dz8fak+X6L62vqu3iybQnj+lG84OttBuU9KY3L9kA==
+
 launch-editor@^2.2.1, launch-editor@^2.6.1:
   version "2.6.1"
 <<<<<<< Updated upstream
