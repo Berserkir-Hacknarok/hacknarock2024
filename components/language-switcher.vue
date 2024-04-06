@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { FwbDropdown, FwbListGroup, FwbListGroupItem } from 'flowbite-vue'
 
+// @ts-expect-error - That's bullshit
 import type { LocaleObject } from '@nuxtjs/i18n/dist/runtime/composables'
 
 const $i18n = useI18n()
@@ -27,7 +28,7 @@ function redirectWithQuery(code: string) {
 </script>
 
 <template>
-  <fwb-dropdown text="Change language">
+  <fwb-dropdown :text="$t('change-language')">
     <fwb-list-group>
       <fwb-list-group-item
         v-for="lang in availableLocales"
