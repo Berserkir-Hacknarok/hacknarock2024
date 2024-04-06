@@ -22,7 +22,7 @@ function reset() {
 
     <div class="inline-flex justify-evenly">
       <FwbButton class="flowbite" @click="submit()">Submit</FwbButton>
-      <FwbButton class="flowbite" @click="reset">Reset</FwbButton>
+      <FwbButton class="flowbite" @click="reset()">Reset</FwbButton>
     </div>
   </div>
 </template>
