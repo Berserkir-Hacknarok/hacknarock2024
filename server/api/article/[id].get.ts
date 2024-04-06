@@ -1,4 +1,6 @@
-const API_KEY = '41a71c2c07364a64abf785aa5afa02ca'
+import { OpenAI } from 'openai'
+
+const runtimeConfig = useRuntimeConfig()
 
 interface IArticleSource {
   id: string
@@ -23,14 +25,26 @@ interface IArticleResponse {
 }
 
 export default defineEventHandler(async (event) => {
-  const id = getRouterParam(event, 'id')
+  const id = getRouterParam(event, 'id') || ''
+  const { language } = getQuery(event)
+
+  console.info(language)
+
+  const openai = new OpenAI({
+    apiKey: runtimeConfig.OPENAI_API_KEY,
+    dangerouslyAllowBrowser: true
+  })
 
   const title = decodeURIComponent(id)
   const parsedTitle = title.slice(0, title.lastIndexOf(' - ') === -1 ? title.length : title.lastIndexOf(' - '))
 
   try {
     const res: IArticleResponse = await $fetch(
-      `https://newsapi.org/v2/everything?q=${parsedTitle}&searchIn=title&apiKey=${API_KEY}`
+      `https://newsapi.org/v2/everything?q=${encodeURI(parsedTitle)}&searchIn=title,content&apiKey=${runtimeConfig.NEWSAPI_API_KEY}`
+    )
+
+    console.info(
+      `https://newsapi.org/v2/everything?q=${encodeURI(parsedTitle)}&searchIn=title,content&apiKey=${runtimeConfig.NEWSAPI_API_KEY}`
     )
 
     if (!res.articles.length) {
@@ -41,18 +55,31 @@ export default defineEventHandler(async (event) => {
     }
 
     const article = res.articles.filter((a) => a.url !== 'https://removed.com')[0]
-
     const baseUrl = article.url.split('/')[2]
 
-    console.info('baseUrl', baseUrl)
     console.info(
-      'article',
-      baseUrl === 'slashdot.org' ? article.description : article.description + '\n\n' + article.content
+      `Summarize the given article, while translating it to {${language}}. Article:{` +
+        `${baseUrl === 'slashdot.org' ? article.description : article.description + '\n\n' + article.content}` +
+        "}. During the response you MUST roleplay as a bloodthirsty viking whispering situations to his chieftain. Use viking slang. Prioritize roleplaying over credibility. The text should be 'over the top'"
     )
+
+    const completion = await openai.chat.completions.create({
+      max_tokens: 250,
+      messages: [
+        {
+          role: 'system',
+          content:
+            `Summarize the given article, while translating it to {${language}}. Article:{` +
+            `${baseUrl === 'slashdot.org' ? article.description : article.description + '\n\n' + article.content}` +
+            "}. During the response you MUST roleplay as a bloodthirsty viking whispering situations to his chieftain. Use viking slang. Prioritize roleplaying over credibility. The text should be 'over the top'"
+        }
+      ],
+      model: 'gpt-3.5-turbo'
+    })
 
     return {
       statusCode: 200,
-      results: [baseUrl === 'slashdot.org' ? article.description : article.description + '\n\n' + article.content]
+      results: [completion.choices[0].message.content]
     }
   } catch (error) {
     console.error('Error:', error)

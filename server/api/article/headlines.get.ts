@@ -1,12 +1,12 @@
 import type { IArticleResponse } from '~/interfaces'
 
-const API_KEY = '41a71c2c07364a64abf785aa5afa02ca'
+const runtimeConfig = useRuntimeConfig()
 
 export default defineEventHandler(async (event) => {
   const { country } = getQuery(event)
 
   const res = await $fetch<IArticleResponse>(
-    `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${API_KEY}`
+    `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${runtimeConfig.NEWSAPI_API_KEY}`
   )
 
   return {

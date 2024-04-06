@@ -227,6 +227,7 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    // secretKey: process.env.SECRET_KEY
+    OPENAI_API_KEY: process.env.OPENAI_API_KEY,
+    NEWSAPI_API_KEY: process.env.NEWSAPI_API_KEY
   }
 })
