@@ -11,6 +11,8 @@ const { data: translations } = useAsyncData('translations', async() => (await $f
         {{ translations }}
 
         <nuxt-link to="/login" class="mt-4 text-blue-500">Login</nuxt-link>
+
+        <iframe src="https://dddavit.github.io/subway/" width="480" style="aspect-ratio: 9/16" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
       </div>
     </NuxtLayout>
   </div>
