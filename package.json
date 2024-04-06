@@ -43,6 +43,7 @@
     "js-quantities": "^1.8.0",
     "kysely": "^0.27.3",
     "nuxt": "^3.11.2",
+    "openai": "^4.33.0",
     "pinia": "^2.1.6",
     "sitemap": "^7.1.1",
     "string-width": "7.1.0",

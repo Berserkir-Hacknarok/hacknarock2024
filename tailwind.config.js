@@ -18,7 +18,8 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      display: '"Red Hat Display", sans-serif'
+      display: ['Red Hat Display', 'sans-serif'],
+      norse: ['Norse', 'sans-serif']
     },
     backgroundImage: {
       'gradient-light': 'linear-gradient(180deg, rgba(251, 146, 60, 0.25) 0%, rgba(251, 146, 60, 0.75) 100%)',

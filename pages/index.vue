@@ -6,7 +6,7 @@ const { data: translations } = useAsyncData('translations', async() => (await $f
   <div>
     <NuxtLayout>
       <div class="container mx-auto flex flex-col items-center justify-center">
-        <h1 class="text-4xl font-bold">karol patrz, umiem gita</h1>
+        <h1 class="text-4xl font-bold">Hacknarock</h1>
 
         {{ translations }}
 
