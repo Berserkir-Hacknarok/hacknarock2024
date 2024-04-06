@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data: translations } = useAsyncData('translations', async() => (await $fetch('/api/test')).results)
+const { data: translations } = useAsyncData('translations', async () => (await $fetch('/api/test')).results)
 </script>
 
 <template>

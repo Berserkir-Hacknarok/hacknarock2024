@@ -1,6 +1,8 @@
 <template>
   <div class="settings">
-    <!-- <ThemeSwitcher /> -->
-    <LanguageSwitcher />
+    <div class="w-full inline-flex items-center justify-evenly">
+      <ThemeSwitcher />
+      <LanguageSwitcher />
+    </div>
   </div>
 </template>

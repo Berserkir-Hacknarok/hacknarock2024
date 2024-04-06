@@ -24,19 +24,22 @@ body {
 }
 
 .vscode {
+  @apply h-full;
   grid-area: vscode;
 }
 
 .notes {
+  @apply h-full;
   grid-area: notes;
 }
 
 .game {
+  @apply h-full;
   grid-area: game;
 }
 
 .leftpanel {
-  @apply grid grid-cols-[1fr] grid-rows-[auto_1fr] gap-[0px_0px];
+  @apply grid grid-cols-[1fr] grid-rows-[auto_1fr] gap-[.25rem_.25rem] h-full;
   grid-template-areas:
     "settings"
     "shorts";
@@ -44,28 +47,33 @@ body {
 }
 
 .settings {
+  @apply h-full;
   grid-area: settings;
 }
 
 .shorts {
+  @apply h-full;
   grid-area: shorts;
 }
 
 .article {
-  @apply grid grid-cols-[300px_1fr] grid-rows-[1fr] gap-[0px_0px];
+  @apply grid grid-cols-[300px_1fr] grid-rows-[1fr] gap-[.25rem_.25rem] h-full;
   grid-template-areas: "article__list article__summary";
   grid-area: article;
 }
 
 .article__list {
+  @apply h-full;
   grid-area: article__list;
 }
 
 .article__summary {
+  @apply h-full;
   grid-area: article__summary;
 }
 
 .header {
+  @apply h-full;
   grid-area: header;
 }
 
