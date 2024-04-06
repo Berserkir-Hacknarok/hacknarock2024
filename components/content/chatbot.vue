@@ -35,8 +35,6 @@ main();
       <div class="container mx-auto flex flex-col items-center justify-center">
         <h1 class="text-4xl font-bold">{{ response }}</h1>
 
-        {{ translations }}
-
         <iframe src="https://dddavit.github.io/subway/" width="480" style="aspect-ratio: 9/16" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
         <button onclick="main()">click</button>
