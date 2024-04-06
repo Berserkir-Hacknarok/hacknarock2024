@@ -1,3 +1,5 @@
 <template>
-  <div class="vscode"></div>
+  <div class="vscode">
+    <VikingGPT />
+  </div>
 </template>

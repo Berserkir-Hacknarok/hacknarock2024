@@ -1,3 +1,6 @@
 <template>
-  <div class="settings"></div>
+  <div class="settings">
+    <!-- <ThemeSwitcher /> -->
+    <LanguageSwitcher />
+  </div>
 </template>

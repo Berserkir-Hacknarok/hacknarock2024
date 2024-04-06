@@ -168,8 +168,41 @@ export default defineNuxtConfig({
     }
   },
 
+  /**
+   * i18n Config
+   * Official module: https://nuxt.com/modules/i18n
+   */
+  i18n: {
+    defaultLocale: 'pl',
+    detectBrowserLanguage: {
+      alwaysRedirect: false,
+      fallbackLocale: 'en',
+      redirectOn: 'root',
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      cookieCrossOrigin: true
+    },
+    langDir: 'lang/',
+    lazy: true,
+    locales: [
+      {
+        code: 'pl',
+        file: 'pl.json',
+        iso: 'pl-PL',
+        name: 'Polski'
+      },
+      {
+        code: 'en',
+        file: 'en.json',
+        iso: 'en-US',
+        name: 'English'
+      }
+    ]
+  },
+
   modules: [
     '@nuxtjs/color-mode',
+    '@nuxtjs/i18n',
     '@pinia/nuxt',
     '@pinia-plugin-persistedstate/nuxt',
     '@nuxt/image',

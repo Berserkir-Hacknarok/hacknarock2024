@@ -38,6 +38,7 @@ rules:
   prettier/prettier:
     - error
   indent: off
+  arrow-parens: off
   vue/html-self-closing:
     - error
     - html:
