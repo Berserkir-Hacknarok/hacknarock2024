@@ -20,10 +20,10 @@ const activeTab = ref('first')
         <FwbTab name="notes-tab" :title="$t('notes')">
           <NotesTab />
         </FwbTab>
-        <FwbTab name="settings-tab" :title="$t('settings')">
-          <SettingsTab />
+        <FwbTab name="wolfree-tab" :title="$t('wolfree')">
+          <WolfreeTab />
         </FwbTab>
-        <FwbTab name="wolfree-tab" :title="$t('Wolfree')">
+        <FwbTab name="settings-tab" :title="$t('settings')">
           <SettingsTab />
         </FwbTab>
       </FwbTabs>
