@@ -1,7 +1,7 @@
-import type { Insertable, Selectable, Updateable } from 'kysely'
+import type { Insertable, Selectable, Updateable, Generated } from 'kysely'
 
 export default interface Notes {
-  note_id: number
+  note_id: Generated<number>
   note: string
 }
 

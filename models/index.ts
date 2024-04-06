@@ -1,4 +1,5 @@
 import type Database from './Database'
-import type TextTranslation from "./TextTranslation"
+import type Notes from './Notes'
+import type TextTranslation from './TextTranslation'
 
-export type { Database, TextTranslation }
+export type { Database, TextTranslation, Notes }
