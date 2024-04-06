@@ -4,6 +4,8 @@ import { initFlowbite } from 'flowbite'
 const { $pwa } = useNuxtApp()
 
 onMounted(() => {
+  initFlowbite()
+
   if ($pwa?.offlineReady) {
     alert('App ready to work offline')
   }
@@ -19,10 +21,6 @@ onMounted(() => {
       persistState: true
     })
   }
-})
-
-onBeforeMount(() => {
-  initFlowbite()
 })
 </script>
 

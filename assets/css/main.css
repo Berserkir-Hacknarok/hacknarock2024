@@ -16,7 +16,7 @@ body {
 /* Grid */
 
 .container {
-  @apply grid grid-cols-[300px_1fr_300px] grid-rows-[0.5fr_1fr_1fr] gap-[0.25rem_0.25rem];
+  @apply grid grid-cols-[300px_1fr_300px] grid-rows-[auto_calc(50vh-1rem)_auto] gap-[0.25rem_0.25rem];
   grid-template-areas:
     "header header header"
     "article article notes"
@@ -68,7 +68,7 @@ body {
 }
 
 .article {
-  @apply grid grid-cols-[300px_1fr] grid-rows-[1fr] gap-[.25rem_.25rem] h-full;
+  @apply grid grid-cols-[300px_1fr] grid-rows-[1fr] gap-[.25rem_.25rem] h-full py-4;
   grid-template-areas: "article__list article__summary";
   grid-area: article;
 }

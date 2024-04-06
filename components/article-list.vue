@@ -1,31 +1,42 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import Vue3Treeview from 'vue3-treeview'
+import { FwbAccordion, FwbAccordionContent, FwbAccordionHeader, FwbAccordionPanel } from 'flowbite-vue'
 
-const nodes = ref({
-  id1: {
-    text: 'text1',
-    children: ['id11', 'id12']
-  },
-  id11: {
-    text: 'text11'
-  },
-  id12: {
-    text: 'text12'
-  },
-  id2: {
-    text: 'text2'
-  }
+import type { IArticleHeadline } from '~/interfaces'
+
+const $props = defineProps<{
+  headlines: IArticleHeadline[]
+}>()
+
+const roots = computed(() => {
+  return $props.headlines.map((headline) => headline.author).filter((author) => author)
 })
 
-const config = ref({
-  collapsed: false,
-  roots: ['id1', 'id2']
+const nodes = computed(() => {
+  return Object.fromEntries(
+    roots.value.map((root) => [root, $props.headlines.filter((headline) => headline.author === root)])
+  )
 })
 </script>
 
 <template>
   <div class="article__list">
-    <vue3-treeview :nodes="nodes" :config="config" />
+    <client-only>
+      <fwb-accordion flush class="overflow-y-auto max-h-[calc(50vh_-_3rem)]">
+        <fwb-accordion-panel v-for="root in roots" :key="root">
+          <fwb-accordion-header>{{ root }}</fwb-accordion-header>
+          <fwb-accordion-content>
+            <ul>
+              <li
+                v-for="node in nodes[root]"
+                :key="node.title"
+                class="p-2 cursor-pointer w-full hover:bg-gray-200 hover:dark:bg-gray-700"
+              >
+                {{ node.title }}
+              </li>
+            </ul>
+          </fwb-accordion-content>
+        </fwb-accordion-panel>
+      </fwb-accordion>
+    </client-only>
   </div>
 </template>
