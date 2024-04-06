@@ -1,17 +1,8 @@
 <template>
   <div>
     <NuxtLayout>
-      <AppHeader />
-
+      <AppTabs />
       <CodeEditor />
-
-      <Notes />
-
-      <Game />
-
-      <LeftPanel />
-
-      <Articles />
     </NuxtLayout>
   </div>
 </template>

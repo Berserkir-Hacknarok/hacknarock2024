@@ -1,5 +1,7 @@
 <template>
-  <div class="container overflow-y-auto overflow-x-none flex flex-col">
+  <div class="container">
+    <AppHeader />
+
     <slot></slot>
   </div>
 </template>

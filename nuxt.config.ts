@@ -142,7 +142,6 @@ export default defineNuxtConfig({
     '@/assets/css/flowbite.css',
     '@/assets/css/tailwind.css',
     '@/assets/css/main.css',
-    '@/assets/css/markdown.css',
     '@/assets/css/treeview.css',
     'vue3-treeview/dist/style.css'
   ],

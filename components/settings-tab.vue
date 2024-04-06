@@ -1,0 +1,28 @@
+<script setup lang="ts">
+import { FwbSelect } from 'flowbite-vue'
+
+import useSettingsStore, { AVAILABLE_GAMES, SOCIAL_MEDIA } from '~/store/settings.store'
+
+const settingsStore = useSettingsStore()
+
+const games = computed(() => AVAILABLE_GAMES.map((game) => ({ value: game, name: game })))
+const shorts = computed(() => SOCIAL_MEDIA.map((sm) => ({ value: sm, name: sm })))
+</script>
+
+<template>
+  <div class="settings-tab w-full h-full flex flex-col gap-4">
+    <span class="inline-flex justify-between items-center">{{ $t('change-theme') }}<ThemeSwitcher /></span>
+
+    <LanguageSwitcher />
+
+    <FwbSelect v-model="settingsStore.game" :options="games" />
+    <FwbSelect v-model="settingsStore.shorts" :options="shorts" />
+
+    <!-- <select
+      v-model="settingsStore.game"
+      class="w-full p-2 rounded-md border border-gray-300 focus:outline-none focus:ring focus:ring-blue-200"
+    >
+      <option v-for="game in AVAILABLE_GAMES" :key="game" :value="game">{{ game }}</option>
+    </select> -->
+  </div>
+</template>

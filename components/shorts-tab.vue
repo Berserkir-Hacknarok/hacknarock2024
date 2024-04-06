@@ -2,13 +2,13 @@
 
 <template>
   <!-- style="max-width: 605px; min-width: 325px" -->
-  <div class="shorts h-[calc(50vh-92px)]">
+  <div class="shorts-tab h-full w-full">
     <blockquote
-      class="tiktok-embed w-full aspect-[9/16]"
+      class="tiktok-embed w-full"
       cite="https://www.tiktok.com/@scout2015/video/6718335390845095173"
       data-video-id="6718335390845095173"
     >
-      <section class="h-full before:h-full">
+      <section class="h-full">
         <a target="_blank" title="@scout2015" href="https://www.tiktok.com/@scout2015?refer=embed" class="!hidden"
           >@scout2015</a
         >

@@ -32,14 +32,14 @@ watch($props, async () => {
 </script>
 
 <template>
-  <div class="article__summary overflow-y-auto">
+  <div class="article__summary overflow-y-auto h-full w-full">
     <h2>{{ $props.title }}</h2>
 
-    <div v-if="pending" class="w-full h-full flex flex-col items-center justify-center">
+    <div v-if="pending" class="w-full h-[calc(100%_-_4rem)] flex flex-col items-center justify-center">
       <fwb-spinner size="12" />
       <h3 class="text-2xl mt-4">{{ $t('loading') }}</h3>
     </div>
 
-    <p v-else class="p-2">{{ article }}</p>
+    <p v-else class="p-2 h-[calc(100%_-_4rem)]">{{ article }}</p>
   </div>
 </template>

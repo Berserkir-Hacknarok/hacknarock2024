@@ -3,5 +3,12 @@
   "change-language": "Change language",
   "no-headlines": "No articles available",
   "pick-article": "Pick an article",
-  "loading": "Loading..."
+  "loading": "Loading...",
+  "articles": "Articles",
+  "game": "Game",
+  "shorts": "Shorts",
+  "notes": "Notes",
+  "settings": "Settings",
+  "change-theme": "Change theme",
+  "write-note": "Write a note..."
 }
