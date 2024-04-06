@@ -1,122 +1,44 @@
-<script setup>
-import { StarterKit } from '@tiptap/starter-kit'
-import { useEditor, EditorContent } from '@tiptap/vue-3'
-
-const editor = useEditor({
-  content: '<h6>I’m running Tiptap with Vue.js. 🎉</h6>',
-  extensions: [StarterKit]
-})
-</script>
-
 <template>
-  <div class="vscode max-w-[calc(100vw_-_600px)] overflowy-y-scroll p-4">
-    <div v-if="editor" class="codeEditorButtons inline-flex flex-wrap">
-      <button
-        :disabled="!editor.can().chain().focus().toggleBold().run()"
-        :class="{ 'is-active': editor.isActive('bold') }"
-        @click="editor.chain().focus().toggleBold().run()"
-      >
-        bold
-      </button>
-      <button
-        :disabled="!editor.can().chain().focus().toggleItalic().run()"
-        :class="{ 'is-active': editor.isActive('italic') }"
-        @click="editor.chain().focus().toggleItalic().run()"
-      >
-        italic
-      </button>
-      <button
-        :disabled="!editor.can().chain().focus().toggleStrike().run()"
-        :class="{ 'is-active': editor.isActive('strike') }"
-        @click="editor.chain().focus().toggleStrike().run()"
-      >
-        strike
-      </button>
-      <button
-        :disabled="!editor.can().chain().focus().toggleCode().run()"
-        :class="{ 'is-active': editor.isActive('code') }"
-        @click="editor.chain().focus().toggleCode().run()"
-      >
-        code
-      </button>
-      <button @click="editor.chain().focus().unsetAllMarks().run()">clear marks</button>
-      <button @click="editor.chain().focus().clearNodes().run()">clear nodes</button>
-      <button
-        :class="{ 'is-active': editor.isActive('paragraph') }"
-        @click="editor.chain().focus().setParagraph().run()"
-      >
-        paragraph
-      </button>
-      <button
-        :class="{ 'is-active': editor.isActive('heading', { level: 1 }) }"
-        @click="editor.chain().focus().toggleHeading({ level: 1 }).run()"
-      >
-        h1
-      </button>
-      <button
-        :class="{ 'is-active': editor.isActive('heading', { level: 2 }) }"
-        @click="editor.chain().focus().toggleHeading({ level: 2 }).run()"
-      >
-        h2
-      </button>
-      <button
-        :class="{ 'is-active': editor.isActive('heading', { level: 3 }) }"
-        @click="editor.chain().focus().toggleHeading({ level: 3 }).run()"
-      >
-        h3
-      </button>
-      <button
-        :class="{ 'is-active': editor.isActive('heading', { level: 4 }) }"
-        @click="editor.chain().focus().toggleHeading({ level: 4 }).run()"
-      >
-        h4
-      </button>
-      <button
-        :class="{ 'is-active': editor.isActive('heading', { level: 5 }) }"
-        @click="editor.chain().focus().toggleHeading({ level: 5 }).run()"
-      >
-        h5
-      </button>
-      <button
-        :class="{ 'is-active': editor.isActive('heading', { level: 6 }) }"
-        @click="editor.chain().focus().toggleHeading({ level: 6 }).run()"
-      >
-        h6
-      </button>
-      <button
-        :class="{ 'is-active': editor.isActive('bulletList') }"
-        @click="editor.chain().focus().toggleBulletList().run()"
-      >
-        bullet list
-      </button>
-      <button
-        :class="{ 'is-active': editor.isActive('orderedList') }"
-        @click="editor.chain().focus().toggleOrderedList().run()"
-      >
-        ordered list
-      </button>
-      <button
-        :class="{ 'is-active': editor.isActive('codeBlock') }"
-        @click="editor.chain().focus().toggleCodeBlock().run()"
-      >
-        code block
-      </button>
-      <button
-        :class="{ 'is-active': editor.isActive('blockquote') }"
-        @click="editor.chain().focus().toggleBlockquote().run()"
-      >
-        blockquote
-      </button>
-      <button @click="editor.chain().focus().setHorizontalRule().run()">horizontal rule</button>
-      <button @click="editor.chain().focus().setHardBreak().run()">hard break</button>
-      <button :disabled="!editor.can().chain().focus().undo().run()" @click="editor.chain().focus().undo().run()">
-        undo
-      </button>
-      <button :disabled="!editor.can().chain().focus().redo().run()" @click="editor.chain().focus().redo().run()">
-        redo
-      </button>
-    </div>
-
-    <editor-content class="codeEditor" :editor="editor" />
+  <div>
+    <iframe
+      ref="iframe"
+      :src="onlineGDBUrl"
+      frameborder="0"
+      style="border: 0; width: 100%"
+      :height="iframeHeight + 'px'"
+      allowfullscreen
+    >
+    </iframe>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      onlineGDBUrl: 'https://www.onlinegdb.com/',
+      iframeHeight: 0
+    }
+  },
+  mounted() {
+    this.adjustIframeHeight()
+    window.addEventListener('resize', this.adjustIframeHeight)
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.adjustIframeHeight)
+  },
+  methods: {
+    adjustIframeHeight() {
+      const iframe = this.$refs.iframe
+      if (iframe) {
+        const bodyHeight = iframe.contentWindow.document.body.scrollHeight
+        this.iframeHeight = bodyHeight
+      }
+    }
+  }
+}
+</script>
+
+<style>
+/* Add your custom styles here if needed */
+</style>
