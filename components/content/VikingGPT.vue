@@ -38,15 +38,7 @@ main();
 </script>
 
 <template>
-  <div>
-    <NuxtLayout>
       <div class="container mx-auto flex flex-col items-center justify-center">
-        <h1 class="text-4xl font-bold">{{ response }}</h1>
-        <h1>HALO</h1>
-
-
-        <button onclick="main()">click</button>
+        <p class="text-4xl font-bold">{{ response }}</p>
       </div>
-    </NuxtLayout>
-  </div>
 </template>
