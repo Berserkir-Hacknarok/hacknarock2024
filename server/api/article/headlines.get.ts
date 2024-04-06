@@ -28,7 +28,6 @@ export default defineEventHandler(async (event) => {
   const res = await $fetch<IArticleResponse>(
     `https://newsapi.org/v2/top-headlines?q=${id}&searchIn=title&apiKey=${API_KEY}`
   )
-  
 
   return {
     statusCode: 200,
