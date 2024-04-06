@@ -14,6 +14,7 @@ function reset() {
 <template>
   <div class="notes-tab flex flex-col w-full h-full gap-4">
     <textarea
+      id="notes-element"
       v-model="message"
       :placeholder="$t('write-note')"
       class="w-full h-full border p-2.5 text-sm bg-gray-50 rounded-lg border-gray-200 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"

@@ -13,6 +13,7 @@ const linkId = computed(() => getRandomVideo(settingsStore.shorts as Platform))
   <div class="shorts-tab h-full w-full">
     <blockquote
       v-if="settingsStore.shorts === 'tiktok'"
+      id="shorts-iframe"
       class="tiktok-embed w-full h-full"
       :cite="linkId"
       :data-video-id="`https://www.tiktok.com/@scout2015/video/${linkId}`"
@@ -22,6 +23,7 @@ const linkId = computed(() => getRandomVideo(settingsStore.shorts as Platform))
 
     <iframe
       v-else-if="settingsStore.shorts === 'facebook'"
+      id="shorts-iframe"
       :src="`https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F${linkId}%2F&show_text=false`"
       class="facebook-embed w-full h-full"
       scrolling="no"
@@ -32,6 +34,7 @@ const linkId = computed(() => getRandomVideo(settingsStore.shorts as Platform))
 
     <iframe
       v-else-if="settingsStore.shorts === 'instagram'"
+      id="shorts-iframe"
       :src="`https://www.instagram.com/reel/${linkId}/embed/`"
       class="instagram-embed w-full h-full"
       frameborder="0"
@@ -43,6 +46,7 @@ const linkId = computed(() => getRandomVideo(settingsStore.shorts as Platform))
 
     <iframe
       v-else-if="settingsStore.shorts === 'youtube'"
+      id="shorts-iframe"
       :src="`https://www.youtube.com/embed/${linkId}`"
       class="youtube-embed w-full h-full"
       frameborder="0"

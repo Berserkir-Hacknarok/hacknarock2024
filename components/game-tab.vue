@@ -7,7 +7,7 @@ const settingsStore = useSettingsStore()
 <template>
   <div class="game-tab flex justify-center items-start w-full h-full">
     <iframe
-      id="game"
+      id="game-iframe"
       :src="`https://dddavit.github.io/${settingsStore.game}/`"
       class="w-full h-full aspect-[9/16]"
       frameBorder="0"
