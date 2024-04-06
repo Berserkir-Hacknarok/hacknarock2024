@@ -23,6 +23,9 @@ const activeTab = ref('first')
         <FwbTab name="settings-tab" :title="$t('settings')">
           <SettingsTab />
         </FwbTab>
+        <FwbTab name="wolfree-tab" :title="$t('Wolfree')">
+          <SettingsTab />
+        </FwbTab>
       </FwbTabs>
     </FwbCard>
   </div>
