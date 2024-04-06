@@ -1,49 +1,53 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import getRandomVideo from '~/helpers/getRandomVideo'
+import useSettingsStore from '~/store/settings.store'
+
+import type { Platform } from '~/settings/constants'
+
+const settingsStore = useSettingsStore()
+
+const linkId = computed(() => getRandomVideo(settingsStore.shorts as Platform))
+</script>
 
 <template>
-  <!-- style="max-width: 605px; min-width: 325px" -->
-  <iframe
-    src="https://www.youtube.com/embed/5fgJfsc4UYogit"
-    frameborder="0"
-    class="w-full h-[calc(50vh-56px)] aspect-[9/16]"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen
-  ></iframe>
-
   <div class="shorts-tab h-full w-full">
     <blockquote
-      class="tiktok-embed w-full"
-      cite="https://www.tiktok.com/@scout2015/video/6718335390845095173"
-      data-video-id="6718335390845095173"
+      v-if="settingsStore.shorts === 'tiktok'"
+      class="tiktok-embed w-full h-full"
+      :cite="linkId"
+      :data-video-id="`https://www.tiktok.com/@scout2015/video/${linkId}`"
     >
-      <section class="h-full">
-        <a target="_blank" title="@scout2015" href="https://www.tiktok.com/@scout2015?refer=embed" class="!hidden"
-          >@scout2015</a
-        >
-        <span class="!hidden">Scramble up ur name &#38; I'll try to guess it😍❤️</span>
-        <a title="foryoupage" target="_blank" href="https://www.tiktok.com/tag/foryoupage?refer=embed" class="!hidden"
-          >#foryoupage</a
-        >
-        <a
-          title="petsoftiktok"
-          target="_blank"
-          href="https://www.tiktok.com/tag/petsoftiktok?refer=embed"
-          class="!hidden"
-        >
-          #petsoftiktok
-        </a>
-        <a title="aesthetic" target="_blank" href="https://www.tiktok.com/tag/aesthetic?refer=embed" class="!hidden"
-          >#aesthetic</a
-        >
-        <a
-          target="_blank"
-          title="♬ original sound - tiff"
-          href="https://www.tiktok.com/music/original-sound-6689804660171082501?refer=embed"
-          class="!hidden"
-        >
-          ♬ original sound - tiff
-        </a>
-      </section>
+      <section></section>
     </blockquote>
+
+    <iframe
+      v-else-if="settingsStore.shorts === 'facebook'"
+      :src="`https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2F${linkId}%2F&show_text=false`"
+      class="facebook-embed w-full h-full"
+      scrolling="no"
+      frameborder="0"
+      allowfullscreen="true"
+    >
+    </iframe>
+
+    <iframe
+      v-else-if="settingsStore.shorts === 'instagram'"
+      :src="`https://www.instagram.com/reel/${linkId}/embed/`"
+      class="instagram-embed w-full h-full"
+      frameborder="0"
+      allowfullscreen="true"
+      allow="autoplay; web-share"
+    >
+      Iframe not supported
+    </iframe>
+
+    <iframe
+      v-else-if="settingsStore.shorts === 'youtube'"
+      :src="`https://www.youtube.com/embed/${linkId}`"
+      class="youtube-embed w-full h-full"
+      frameborder="0"
+      allowfullscreen="true"
+      allow="autoplay; web-share"
+    ></iframe>
   </div>
 </template>
