@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FwbSpinner } from 'flowbite-vue'
+import { FwbButton, FwbSpinner } from 'flowbite-vue'
 
 const $i18n = useI18n()
 
@@ -8,7 +8,12 @@ const $props = defineProps<{
 }>()
 
 const currentLocale = computed(
-  () => $i18n.locales.value.find((locale) => locale.code === $i18n.locale.value) || { name: 'English' }
+  () =>
+    $i18n.locales.value.find((locale) => locale.code === $i18n.locale.value) || {
+      name: 'English',
+      code: 'en',
+      iso: 'en-US'
+    }
 )
 
 const { data: article, pending } = useLazyAsyncData<string>(
@@ -29,10 +34,18 @@ watch($props, async () => {
 //   console.info()
 //   refreshNuxtData('summary')
 // })
+
+function speak(msg: string) {
+  const speech = new SpeechSynthesisUtterance(msg)
+
+  speech.lang = currentLocale.value.iso || 'en-US'
+
+  window.speechSynthesis.speak(speech)
+}
 </script>
 
 <template>
-  <div class="article__summary overflow-y-auto h-full w-full">
+  <div class="article__summary h-full w-full">
     <h2>{{ $props.title }}</h2>
 
     <div v-if="pending" class="w-full h-[calc(100%_-_4rem)] flex flex-col items-center justify-center">
@@ -40,6 +53,8 @@ watch($props, async () => {
       <h3 class="text-2xl mt-4">{{ $t('loading') }}</h3>
     </div>
 
-    <p v-else class="p-2 h-[calc(100%_-_4rem)]">{{ article }}</p>
+    <p v-else class="p-2 h-[calc(100%_-_4rem)] overflow-y-auto">{{ article }}</p>
+
+    <FwbButton v-if="article" class="flowbite w-full" @click="speak(article)">{{ $t('read') }}</FwbButton>
   </div>
 </template>

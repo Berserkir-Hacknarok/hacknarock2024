@@ -20,8 +20,8 @@ function reset() {
     ></textarea>
 
     <div class="inline-flex justify-evenly">
-      <FwbButton @click="submit()">Submit</FwbButton>
-      <FwbButton @click="reset">Reset</FwbButton>
+      <FwbButton class="flowbite" @click="submit()">Submit</FwbButton>
+      <FwbButton class="flowbite" @click="reset">Reset</FwbButton>
     </div>
   </div>
 </template>

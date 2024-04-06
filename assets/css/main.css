@@ -41,3 +41,12 @@ select {
   opacity: 0;
   filter: blur(1rem);
 }
+
+.dropdown span,
+.dropdown svg path {
+  @apply text-white;
+}
+
+button.flowbite span {
+  @apply text-white;
+}

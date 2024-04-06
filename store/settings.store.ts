@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 
 export const AVAILABLE_GAMES = [
+  'subway',
   'BlumgiMagicBall',
   'HeadSoccer2022',
   'combat',
@@ -10,7 +11,6 @@ export const AVAILABLE_GAMES = [
   'school_surfers_v1',
   'sticky-road',
   'subway-surfers',
-  'subway',
   'teacher',
   'tennin-physics'
 ]
