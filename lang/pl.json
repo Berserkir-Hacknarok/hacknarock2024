@@ -14,5 +14,8 @@
   "write-note": "Napisz notatkę...",
   "wolfree": "Wolfree",
   "read": "Czytaj",
-  "new": "Nowa"
+  "new": "Nowa",
+  "audio": "Audio",
+  "previous": "<",
+  "next": ">"
 }
