@@ -95,6 +95,51 @@ const icons = [
   }
 ]
 
+const locales = [
+  {
+    code: 'pl',
+    file: 'pl.json',
+    iso: 'pl-PL',
+    name: 'Polski'
+  },
+  {
+    code: 'en',
+    file: 'en.json',
+    iso: 'en-US',
+    name: 'English'
+  },
+  {
+    code: 'de',
+    file: 'de.json',
+    iso: 'de-DE',
+    name: 'Deutsch'
+  },
+  {
+    code: 'fr',
+    file: 'fr.json',
+    iso: 'fr-FR',
+    name: 'Français'
+  },
+  {
+    code: 'no',
+    file: 'no.json',
+    iso: 'no-NOR',
+    name: 'Norsk'
+  },
+  {
+    code: 'sv',
+    file: 'swe.json',
+    iso: 'sv-SWE',
+    name: 'Svenska'
+  },
+  {
+    code: 'old_no',
+    file: 'oldNorse.json',
+    iso: 'no-NOR',
+    name: 'Gammel Norsk'
+  }
+]
+
 export default defineNuxtConfig({
   // ssr: false,
 
@@ -183,50 +228,7 @@ export default defineNuxtConfig({
     },
     langDir: 'lang/',
     lazy: true,
-    locales: [
-      {
-        code: 'pl',
-        file: 'pl.json',
-        iso: 'pl-PL',
-        name: 'Polski'
-      },
-      {
-        code: 'en',
-        file: 'en.json',
-        iso: 'en-US',
-        name: 'English'
-      },
-      {
-        code: 'de',
-        file: 'de.json',
-        iso: 'de-DE',
-        name: 'Deutsch'
-      },
-      {
-        code: 'fr',
-        file: 'fr.json',
-        iso: 'fr-FR',
-        name: 'Français'
-      },
-      {
-        code: 'no',
-        file: 'no.json',
-        iso: 'no-NOR',
-        name: 'Norsk'
-      },
-      {
-        code: 'sv',
-        file: 'swe.json',
-        iso: 'sv-SWE',
-        name: 'Svenska'
-      },
-      {
-        code: 'old_no',
-        file: 'oldNorse.json',
-        iso: 'no-NOR',
-        name: 'Gammel Norsk'
-      }
-    ]
+    locales
   },
 
   modules: [

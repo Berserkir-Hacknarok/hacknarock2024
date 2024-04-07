@@ -83,6 +83,23 @@ export const VIDEOS = {
   ]
 }
 
+export const AVAILABLE_GAMES = [
+  'subway',
+  'BlumgiMagicBall',
+  'HeadSoccer2022',
+  'combat',
+  'igra-fizika-boxa-2',
+  'igra-stik-duel-boj-s-tenyu',
+  'madburger',
+  'school_surfers_v1',
+  'sticky-road',
+  'subway-surfers',
+  'teacher',
+  'tennin-physics'
+]
+
+export const SOCIAL_MEDIA = ['facebook', 'instagram', 'youtube', 'tiktok']
+
 // const BREAK_TIME = 180
 export const BREAK_TIME = 5
 // const WORK_TIME_MULTIPLIER = 10

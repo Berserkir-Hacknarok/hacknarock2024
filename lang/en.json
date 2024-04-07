@@ -18,5 +18,6 @@
   "audio": "Audio",
   "previous": "Previous",
   "next": "Next",
-  "focus-mode": "Focus mode"
+  "focus-mode": "Focus mode",
+  "refresh": "Refresh"
 }

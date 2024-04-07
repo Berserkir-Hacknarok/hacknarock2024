@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { FwbButton } from 'flowbite-vue'
+
 import getRandomVideo from '~/helpers/getRandomVideo'
 import useSettingsStore from '~/store/settings.store'
 
@@ -6,16 +8,21 @@ import type { Platform } from '~/settings/constants'
 
 const settingsStore = useSettingsStore()
 
-const linkId = computed(() => getRandomVideo(settingsStore.shorts as Platform))
+// @ts-expect-error - Nu-uh, this is not a bug
+const { data: linkId } = useAsyncData<string>('linkId', () => getRandomVideo(settingsStore.shorts as Platform))
 </script>
 
 <template>
-  <div class="shorts-tab h-full w-full">
+  <div class="shorts-tab h-full w-full flex flex-col gap-4">
+    <FwbButton class="w-full" @click="refreshNuxtData('linkId')">
+      {{ $t('refresh') }}
+    </FwbButton>
+
     <blockquote
       v-if="settingsStore.shorts === 'tiktok'"
       id="shorts-iframe"
       class="tiktok-embed w-full h-full"
-      :cite="linkId"
+      :cite="linkId as string"
       :data-video-id="`https://www.tiktok.com/@scout2015/video/${linkId}`"
     >
       <section></section>

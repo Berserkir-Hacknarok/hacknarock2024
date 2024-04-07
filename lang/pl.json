@@ -18,5 +18,6 @@
   "audio": "Audio",
   "previous": "<",
   "next": ">",
-  "focus-mode": "Tryb skupienia"
+  "focus-mode": "Tryb skupienia",
+  "refresh": "Odśwież"
 }

@@ -47,14 +47,12 @@
 <script setup lang="ts">
 import { FwbDropdown, FwbListGroup, FwbListGroupItem, FwbButton, FwbInput } from 'flowbite-vue'
 
-const audioPath = ref('https://www.youtube.com/embed/gjk6QCL2YLE?si=Z8VOnKoVzgMQp6ga')
+const audioSources = ref<string[]>(['https://www.youtube.com/embed/gjk6QCL2YLE?si=Z8VOnKoVzgMQp6ga'])
+const audioPath = ref(audioSources.value[0] || '')
 const currSource = ref('')
-const audioSources = ref<string[]>([])
 
 function addSource() {
   audioSources.value.push(currSource.value)
-  console.info(audioSources.value)
-  console.info(currSource.value)
   currSource.value = ''
 }
 
