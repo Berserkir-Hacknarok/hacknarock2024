@@ -95,10 +95,10 @@ export const AVAILABLE_GAMES = [
   'sticky-road',
   'subway-surfers',
   'teacher',
-  'tennin-physics'
+  'tennis-physics'
 ]
 
-export const SOCIAL_MEDIA = ['facebook', 'instagram', 'youtube', 'tiktok']
+export const SOCIAL_MEDIA = ['youtube', 'instagram', 'facebook', 'tiktok']
 
 // const BREAK_TIME = 180
 export const BREAK_TIME = 5
