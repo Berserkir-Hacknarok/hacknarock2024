@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { FwbSelect, FwbToggle } from 'flowbite-vue'
 
-import useSettingsStore, { AVAILABLE_GAMES, SOCIAL_MEDIA } from '~/store/settings.store'
+import { AVAILABLE_GAMES, SOCIAL_MEDIA } from '~/settings/constants'
+import useSettingsStore from '~/store/settings.store'
 
 const settingsStore = useSettingsStore()
 

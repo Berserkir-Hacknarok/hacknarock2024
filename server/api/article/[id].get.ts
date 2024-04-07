@@ -67,7 +67,12 @@ export default defineEventHandler(async (event) => {
 
     return {
       statusCode: 200,
-      results: [completion.choices[0].message.content]
+      results: [
+        {
+          summary: completion.choices[0].message.content,
+          url: article.url
+        }
+      ]
     }
   } catch (error) {
     console.error('Error:', error)
