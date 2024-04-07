@@ -7,7 +7,7 @@ const properties = [
   {
     hid: 'og:locale',
     property: 'og:locale',
-    content: ''
+    content: 'pl_PL'
   },
   {
     hid: 'og:type',
@@ -17,27 +17,27 @@ const properties = [
   {
     hid: 'og:title',
     property: 'og:title',
-    content: ''
+    content: 'Berserkir Hacknarök 2024'
   },
   {
     hid: 'og:description',
     property: 'og:description',
-    content: ''
+    content: 'Berserkir Hacknarök 2024 - The End of the World is Near!'
   },
   {
     hid: 'og:url',
     property: 'og:url',
-    content: ''
+    content: 'https://hacknarock2024.vercel.app/'
   },
   {
     hid: 'og:site_name',
     property: 'og:site_name',
-    content: ''
+    content: 'Berserkir Hacknarök 2024'
   },
   {
     hid: 'og:image',
     property: 'og:image',
-    content: ''
+    content: 'https://hacknarock2024.vercel.app/icons/android-chrome-512x512.png'
   }
 ]
 
@@ -45,22 +45,22 @@ const twitterProperties = [
   {
     hid: 'twitter:card',
     name: 'twitter:card',
-    content: ''
+    content: 'https://hacknarock2024.vercel.app/icons/android-chrome-512x512.png'
   },
   {
     hid: 'twitter:description',
     name: 'twitter:description',
-    content: ''
+    content: 'Berserkir Hacknarök 2024 - The End of the World is Near!'
   },
   {
     hid: 'twitter:title',
     name: 'twitter:title',
-    content: ''
+    content: 'Berserkir Hacknarök 2024'
   },
   {
     hid: 'twitter:image',
     name: 'twitter:image',
-    content: ''
+    content: 'https://hacknarock2024.vercel.app/icons/android-chrome-512x512.png'
   },
   {
     hid: 'twitter:site',
@@ -70,7 +70,7 @@ const twitterProperties = [
   {
     hid: 'twitter:creator',
     name: 'twitter:creator',
-    content: ''
+    content: 'Berserkir Team'
   }
 ]
 
@@ -78,19 +78,37 @@ const icons = [
   {
     rel: 'icon',
     type: 'image/png',
-    href: '',
+    href: 'https://hacknarock2024.vercel.app/icons/favicon-16x16.png',
+    sizes: '16x16'
+  },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    href: 'https://hacknarock2024.vercel.app/icons/favicon-32x32.png',
     sizes: '32x32'
   },
   {
     rel: 'icon',
     type: 'image/png',
-    href: '',
+    href: 'https://hacknarock2024.vercel.app/icons/favicon-144x144.png',
+    sizes: '144x144'
+  },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    href: 'https://hacknarock2024.vercel.app/icons/android-chrome-192x192.png',
     sizes: '192x192'
+  },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    href: 'https://hacknarock2024.vercel.app/icons/android-chrome-512x512.png',
+    sizes: '512x512'
   },
   {
     rel: 'apple-touch-icon',
     type: 'image/png',
-    href: '',
+    href: 'https://hacknarock2024.vercel.app/icons/apple-touch-icon.png',
     sizes: '192x192'
   }
 ]
@@ -141,8 +159,6 @@ const locales = [
 ]
 
 export default defineNuxtConfig({
-  // ssr: false,
-
   app: {
     pageTransition: {
       name: 'page',
