@@ -23,6 +23,9 @@ const activeTab = ref('game-tab')
         <FwbTab name="wolfree-tab" :title="$t('wolfree')">
           <WolfreeTab />
         </FwbTab>
+        <FwbTab name="audio-tab" :title="$t('audio')">
+          <AudioTab />
+        </FwbTab>
         <FwbTab name="settings-tab" :title="$t('settings')">
           <SettingsTab />
         </FwbTab>
