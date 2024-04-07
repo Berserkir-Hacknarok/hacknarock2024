@@ -30,11 +30,6 @@ watch($props, async () => {
   await refreshNuxtData('article')
 })
 
-// watch($i18n.locale, () => {
-//   console.info()
-//   refreshNuxtData('summary')
-// })
-
 function speak(msg: string) {
   const speech = new SpeechSynthesisUtterance(msg)
 

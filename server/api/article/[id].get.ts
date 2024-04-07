@@ -41,10 +41,6 @@ export default defineEventHandler(async (event) => {
       `https://newsapi.org/v2/everything?q=${encodeURI(parsedTitle)}&searchIn=title,content&apiKey=${runtimeConfig.NEWSAPI_API_KEY}`
     )
 
-    console.info(
-      `https://newsapi.org/v2/everything?q=${encodeURI(parsedTitle)}&searchIn=title,content&apiKey=${runtimeConfig.NEWSAPI_API_KEY}`
-    )
-
     if (!res.articles.length) {
       return {
         statusCode: 404,

@@ -19,8 +19,6 @@ onMounted(() => {
       return
     }
 
-    if (WorkTime.includes(activeElement.id)) console.warn(breakimeLeft.value)
-
     if (FreeTime.includes(activeElement.id)) {
       breakimeLeft.value = breakimeLeft.value > BREAK_TIME ? BREAK_TIME : breakimeLeft.value
       breakimeLeft.value -= 0.1
