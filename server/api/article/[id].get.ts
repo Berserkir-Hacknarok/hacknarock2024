@@ -62,7 +62,7 @@ export default defineEventHandler(async (event) => {
             "}. During the response you MUST roleplay as a bloodthirsty viking whispering situations to his chieftain. Use viking slang. Prioritize roleplaying over credibility. The text should be 'over the top'. Use all available tokens."
         }
       ],
-      model: 'gpt-3.5-turbo'
+      model: 'gpt-4'
     })
 
     return {
