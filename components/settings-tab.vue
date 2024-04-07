@@ -17,12 +17,5 @@ const shorts = computed(() => SOCIAL_MEDIA.map((sm) => ({ value: sm, name: sm })
 
     <FwbSelect v-model="settingsStore.game" :options="games" />
     <FwbSelect v-model="settingsStore.shorts" :options="shorts" />
-
-    <!-- <select
-      v-model="settingsStore.game"
-      class="w-full p-2 rounded-md border border-gray-300 focus:outline-none focus:ring focus:ring-blue-200"
-    >
-      <option v-for="game in AVAILABLE_GAMES" :key="game" :value="game">{{ game }}</option>
-    </select> -->
   </div>
 </template>

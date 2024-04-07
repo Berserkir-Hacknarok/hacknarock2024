@@ -1,10 +1,19 @@
 <script setup lang="ts">
-import { FwbButton } from 'flowbite-vue'
+import { FwbButton, FwbSelect } from 'flowbite-vue'
 
 const message = ref()
+const noteId = ref()
+const { data: notes } = useLazyAsyncData('notes', async () =>
+  (await $fetch('/api/notes')).results.map((r) => ({ ...r, name: `(${r.value}) ${r.name.slice(0, 20)}` }))
+)
 
-function submit() {
+async function submit() {
+  const { results } = await $fetch('/api/notes', {
+    method: 'POST',
+    body: { note: message.value }
+  })
   console.info(message.value)
+  console.info(results)
 }
 
 function reset() {
@@ -13,6 +22,9 @@ function reset() {
 </script>
 <template>
   <div class="notes-tab flex flex-col w-full h-full gap-4">
+    {{ notes }}
+
+    <FwbSelect v-model="noteId" :options="notes" />
     <textarea
       id="notes-element"
       v-model="message"
