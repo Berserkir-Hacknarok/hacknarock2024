@@ -22,7 +22,7 @@ watch($i18n.locale, () => {
 </script>
 
 <template>
-  <div class="article">
+  <div class="article-tab grid grid-rows-2 gap-4 h-full">
     <ArticleList v-if="headlines?.length" :headlines="headlines" @select="title = $event" />
     <div v-else class="article__list">
       <h2>{{ $t('no-headlines') }}</h2>

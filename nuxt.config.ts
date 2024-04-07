@@ -142,7 +142,6 @@ export default defineNuxtConfig({
     '@/assets/css/flowbite.css',
     '@/assets/css/tailwind.css',
     '@/assets/css/main.css',
-    '@/assets/css/markdown.css',
     '@/assets/css/treeview.css',
     'vue3-treeview/dist/style.css'
   ],
@@ -196,6 +195,18 @@ export default defineNuxtConfig({
         file: 'en.json',
         iso: 'en-US',
         name: 'English'
+      },
+      {
+        code: 'de',
+        file: 'de.json',
+        iso: 'de-DE',
+        name: 'Deutsch'
+      },
+      {
+        code: 'fr',
+        file: 'fr.json',
+        iso: 'fr-FR',
+        name: 'Français'
       }
     ]
   },

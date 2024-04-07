@@ -21,6 +21,12 @@ onMounted(() => {
       persistState: true
     })
   }
+
+  if ('speechSynthesis' in window) {
+    console.info('Text to speech is supported!')
+  } else {
+    alert("Sorry, your browser doesn't support text to speech!")
+  }
 })
 
 useHead({
@@ -31,7 +37,6 @@ useHead({
     }
   ]
 })
-
 </script>
 
 <template>

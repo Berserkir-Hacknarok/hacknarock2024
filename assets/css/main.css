@@ -11,123 +11,30 @@ body {
 
 .container {
   @apply w-screen h-screen !max-w-[100vw] flex items-center justify-start p-4;
+  @apply grid grid-cols-[1fr_500px] grid-rows-[auto_1fr] gap-4;
 }
 
-/* Grid */
 
-.container {
-  @apply grid grid-cols-[300px_1fr_300px] grid-rows-[56px_calc(50vh-72px)_auto] gap-[0.25rem_0.25rem];
-  grid-template-areas:
-    "header header header"
-    "article article notes"
-    "leftpanel vscode game";
+/* .header {
+  @apply col-span-2;
+} */
+
+.app-tabs {
+  @apply row-span-2;
 }
 
-.vscode {
-  @apply h-full;
-  grid-area: vscode;
-}
-/* klasy karola start*/
-
-.codeEditor div {
-  height:550px;
-  min-height: 100%;
-  max-height: 100%;
-  overflow: auto;
+.tiktok-embed > section:before {
+  @apply w-full h-full aspect-[9/16];
 }
 
-.codeEditor p {
-  width:100%;
-  color:rgb(124, 231, 231);
+select {
+  @apply capitalize;
 }
 
-.codeEditorButtons * {
-  margin: 3px;
-  margin-left:2px;
-  margin-right:2px;
-  padding:5px;
-  padding-top:2px;
-  padding-bottom:2px;
-  display:block;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;
-  border-radius: 15px;
-  display: block;
-  border: 0px;
-  font-size:12px;
-  box-shadow: 0px 0px 14px -7px #1a025c;
-  background-image: linear-gradient(45deg, #1d086d 0%, #0e32d1  51%, #6437ad  100%);
-  cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.3s;
 }
-
-.codeEditorButtons *:hover {
-  background-position: right center;
-  /* change the direction of the change here */
-  color: #fff;
-  text-decoration: none;
-}
-
-.codeEditorButtons *:active {
-  transform: scale(0.95);
-}
-/* klasy karola end*/
-
-
-.notes {
-  @apply h-full;
-  grid-area: notes;
-}
-
-.game {
-  grid-area: game;
-}
-
-.leftpanel {
-  @apply grid grid-cols-[1fr] grid-rows-[auto_1fr] gap-[.25rem_.25rem] h-full;
-  grid-template-areas:
-    "settings"
-    "shorts";
-  grid-area: leftpanel;
-}
-
-.settings {
-  @apply h-full;
-  grid-area: settings;
-}
-
-.shorts {
-  @apply h-full;
-  grid-area: shorts;
-}
-
-.article {
-  @apply grid grid-cols-[300px_1fr] grid-rows-[1fr] gap-[.25rem_.25rem] h-full py-4;
-  grid-template-areas: "article__list article__summary";
-  grid-area: article;
-}
-
-.article__list {
-  @apply h-full;
-  grid-area: article__list;
-}
-
-.article__summary {
-  @apply h-full;
-  grid-area: article__summary;
-}
-
-.header {
-  @apply h-full;
-  grid-area: header;
-}
-
-/* Page transition effects */
 
 .page-enter-from,
 .page-leave-to {
@@ -135,7 +42,11 @@ body {
   filter: blur(1rem);
 }
 
-.page-enter-active,
-.page-leave-active {
-  transition: all 0.4s;
+.dropdown span,
+.dropdown svg path {
+  @apply text-white;
+}
+
+button.flowbite span {
+  @apply text-white;
 }

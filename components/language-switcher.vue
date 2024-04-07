@@ -28,7 +28,7 @@ function redirectWithQuery(code: string) {
 </script>
 
 <template>
-  <fwb-dropdown :text="$t('change-language')">
+  <fwb-dropdown :text="$t('change-language')" class="dropdown">
     <fwb-list-group>
       <fwb-list-group-item
         v-for="lang in availableLocales"

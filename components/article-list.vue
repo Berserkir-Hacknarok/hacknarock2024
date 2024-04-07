@@ -25,9 +25,9 @@ function selectArticle(article: string) {
 </script>
 
 <template>
-  <div class="article__list">
+  <div class="article__list h-full w-full">
     <client-only>
-      <fwb-accordion flush class="overflow-y-auto max-h-[calc(50vh_-_104px)]">
+      <fwb-accordion flush class="overflow-y-auto h-full w-full">
         <fwb-accordion-panel v-for="root in roots" :key="root">
           <fwb-accordion-header>{{ root }}</fwb-accordion-header>
           <fwb-accordion-content>
