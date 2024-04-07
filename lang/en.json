@@ -1,6 +1,6 @@
 {
   "title": "Hacknarök 2024",
-  "subtitle": "Code editing. Redefined.",
+  "subtitle": "Code editing. Undefined.",
   "change-language": "Change language",
   "no-headlines": "No articles available",
   "pick-article": "Pick an article",
@@ -14,5 +14,8 @@
   "write-note": "Write a note...",
   "wolfree": "Wolfree",
   "read": "Read",
-  "new": "New"
+  "new": "New",
+  "audio": "Audio",
+  "previous": "Previous",
+  "next": "Next"
 }

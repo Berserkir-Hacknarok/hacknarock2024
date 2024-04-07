@@ -48,8 +48,6 @@ watch(noteId, (id) => {
 
 <template>
   <div class="notes-tab flex flex-col w-full h-full gap-4">
-    {{ notes }}
-
     <FwbSelect v-model="noteId" :options="notesOptions" />
 
     <textarea
