@@ -37,7 +37,7 @@ const properties = [
   {
     hid: 'og:image',
     property: 'og:image',
-    content: 'https://hacknarock2024.vercel.app/icons/android-chrome-512x512.png'
+    content: '/icons/android-chrome-512x512.png'
   }
 ]
 
@@ -78,37 +78,37 @@ const icons = [
   {
     rel: 'icon',
     type: 'image/png',
-    href: 'https://hacknarock2024.vercel.app/icons/favicon-16x16.png',
+    href: '/icons/favicon-16x16.png',
     sizes: '16x16'
   },
   {
     rel: 'icon',
     type: 'image/png',
-    href: 'https://hacknarock2024.vercel.app/icons/favicon-32x32.png',
+    href: '/icons/favicon-32x32.png',
     sizes: '32x32'
   },
   {
     rel: 'icon',
     type: 'image/png',
-    href: 'https://hacknarock2024.vercel.app/icons/favicon-144x144.png',
+    href: '/icons/favicon-144x144.png',
     sizes: '144x144'
   },
   {
     rel: 'icon',
     type: 'image/png',
-    href: 'https://hacknarock2024.vercel.app/icons/android-chrome-192x192.png',
+    href: '/icons/android-chrome-192x192.png',
     sizes: '192x192'
   },
   {
     rel: 'icon',
     type: 'image/png',
-    href: 'https://hacknarock2024.vercel.app/icons/android-chrome-512x512.png',
+    href: '/icons/android-chrome-512x512.png',
     sizes: '512x512'
   },
   {
     rel: 'apple-touch-icon',
     type: 'image/png',
-    href: 'https://hacknarock2024.vercel.app/icons/apple-touch-icon.png',
+    href: '/icons/apple-touch-icon.png',
     sizes: '192x192'
   }
 ]
