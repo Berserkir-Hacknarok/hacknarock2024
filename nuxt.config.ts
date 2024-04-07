@@ -207,6 +207,24 @@ export default defineNuxtConfig({
         file: 'fr.json',
         iso: 'fr-FR',
         name: 'Français'
+      },
+      {
+        code: 'no',
+        file: 'no.json',
+        iso: 'no-NOR',
+        name: 'Norsk'
+      },
+      {
+        code: 'sv',
+        file: 'swe.json',
+        iso: 'sv-SWE',
+        name: 'Svenska'
+      },
+      {
+        code: 'old_no',
+        file: 'oldNorse.json',
+        iso: 'no-NOR',
+        name: 'Gammel Norsk'
       }
     ]
   },
