@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FwbSelect } from 'flowbite-vue'
+import { FwbSelect, FwbToggle } from 'flowbite-vue'
 
 import useSettingsStore, { AVAILABLE_GAMES, SOCIAL_MEDIA } from '~/store/settings.store'
 
@@ -17,5 +17,10 @@ const shorts = computed(() => SOCIAL_MEDIA.map((sm) => ({ value: sm, name: sm })
 
     <FwbSelect v-model="settingsStore.game" :options="games" />
     <FwbSelect v-model="settingsStore.shorts" :options="shorts" />
+
+    <span class="inline-flex justify-between">
+      {{ $t('focus-mode') }}
+      <FwbToggle v-model="settingsStore.focusMode" />
+    </span>
   </div>
 </template>

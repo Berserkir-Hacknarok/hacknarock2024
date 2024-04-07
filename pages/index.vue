@@ -1,19 +1,26 @@
 <script setup lang="ts">
+import { BREAK_TIME, WORK_TIME_MULTIPLIER } from '~/settings/constants'
+import useSettingsStore from '~/store/settings.store'
+
+const settingsStore = useSettingsStore()
+
 const FreeTime = ['game-iframe', 'shorts-iframe']
 const WorkTime = ['code-editor-iframe', 'wolfree-iframe', 'notes-element']
-
-// const BREAK_TIME = 180
-const BREAK_TIME = 5
-// const WORK_TIME_MULTIPLIER = 10
-const WORK_TIME_MULTIPLIER = 2
 
 const breakimeLeft = ref(BREAK_TIME)
 
 onMounted(() => {
   setInterval(() => {
-    const activeElement = document.activeElement as HTMLElement | null
     const gameIframe = document.getElementById('game-iframe') as HTMLIFrameElement
     const shortsIframe = document.getElementById('shorts-iframe') as HTMLIFrameElement
+
+    if (!settingsStore.focusMode) {
+      gameIframe.style.filter = 'blur(0px)'
+      shortsIframe.style.filter = 'blur(0px)'
+      return
+    }
+
+    const activeElement = document.activeElement as HTMLElement | null
 
     if (!activeElement) {
       return

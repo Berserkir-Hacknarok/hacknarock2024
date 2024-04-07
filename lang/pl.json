@@ -17,5 +17,6 @@
   "new": "Nowa",
   "audio": "Audio",
   "previous": "<",
-  "next": ">"
+  "next": ">",
+  "focus-mode": "Tryb skupienia"
 }

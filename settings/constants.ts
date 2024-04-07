@@ -83,4 +83,9 @@ export const VIDEOS = {
   ]
 }
 
+// const BREAK_TIME = 180
+export const BREAK_TIME = 5
+// const WORK_TIME_MULTIPLIER = 10
+export const WORK_TIME_MULTIPLIER = 2
+
 export type Platform = keyof typeof VIDEOS

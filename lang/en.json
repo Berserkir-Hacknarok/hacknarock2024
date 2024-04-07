@@ -17,5 +17,6 @@
   "new": "New",
   "audio": "Audio",
   "previous": "Previous",
-  "next": "Next"
+  "next": "Next",
+  "focus-mode": "Focus mode"
 }

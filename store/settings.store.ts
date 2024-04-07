@@ -23,7 +23,8 @@ export default defineStore({
   state: () => {
     return {
       game: AVAILABLE_GAMES[0],
-      shorts: SOCIAL_MEDIA[0]
+      shorts: SOCIAL_MEDIA[0],
+      focusMode: true
     }
   }
 })
